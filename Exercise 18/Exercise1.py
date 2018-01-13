@@ -15,11 +15,12 @@ def checkCowNBull(number, guessedNumber):
     cow = 0
     bull = 0
     i = 0
-    for m in range(len(guessedNumber)):
-        if(number[m] == guessedNumber[m]):
+    for m in guessedNumber:
+        if(number[i] == m):
             cow = cow + 1
-        else:
+        elif(m in number):
             bull = bull + 1
+        i = i + 1
         
     print("Cow:" + str(cow) + " Bull: " + str(bull))
     if(cow == 4):
@@ -36,6 +37,6 @@ while(win != True):
     arrayGuessednumber = []
     for n in guessedNumber:
         arrayGuessednumber.append(int(n))
-    win = checkCowNBull(number, guessedNumber)
+    win = checkCowNBull(number, arrayGuessednumber)
 
 
